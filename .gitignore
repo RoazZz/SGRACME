@@ -1,0 +1,101 @@
+# =========================================================
+# .gitignore - Sistema de Gestión Centralizada (Equipo 5)
+# Proyecto NetBeans - Java with Ant (JavaFX)
+# MySQL/MariaDB (XAMPP) en Windows
+# =========================================================
+#
+# SÍ SE SUBEN (no los ignores):
+#   build.xml
+#   manifest.mf
+#   nbproject/project.xml
+#   nbproject/project.properties
+#   nbproject/build-impl.xml
+#   nbproject/genfiles.properties
+#   nbproject/jfx-impl.xml        (si existe)
+#   src/   (incluye .java, .fxml, .css e imágenes)
+#   lib/   (conector de MySQL y otros .jar que use el proyecto)
+#   bd/esquema.sql (script de creación de tablas)
+#   db.properties.example (plantilla de conexión sin contraseña)
+# =========================================================
+
+# ---------- NetBeans (Ant) ----------
+# Configuración personal de cada máquina (rutas, JDK, últimos archivos abiertos)
+**/nbproject/private/
+# Carpetas que genera NetBeans al compilar ("Clean and Build")
+build/
+dist/
+nbbuild/
+nbdist/
+# Archivos de configuración local que NetBeans crea a veces
+nbactions.xml
+nb-configuration.xml
+.nb-gradle/
+
+# ---------- Java: archivos compilados y de la JVM ----------
+*.class
+*.log
+hs_err_pid*
+replay_pid*
+
+# ---------- JavaFX ----------
+# El SDK de JavaFX lo instala cada quien y se agrega como librería en NetBeans
+# (Tools > Libraries). No se sube: pesa mucho y depende del sistema operativo.
+javafx-sdk*/
+# Paquetes nativos/instaladores que genera el build de JavaFX
+*.msi
+*.exe
+
+# ---------- Empaquetados ----------
+# Los .jar generados quedan en dist/ (ya ignorado).
+# NO se ignoran todos los *.jar porque los de lib/ sí se tienen que subir
+# (ahí va el mysql-connector-j-x.x.x.jar).
+*.war
+*.ear
+
+# ---------- Configuración local y credenciales ----------
+# Cada quien tiene su propia conexión a la BD (usuario/contraseña de XAMPP).
+# Se sube solo la plantilla: db.properties.example
+**/db.properties
+**/config.properties
+.env
+*.env
+
+# ---------- Base de datos ----------
+# El script del esquema (ej. bd/esquema.sql) SÍ se sube.
+# Los respaldos/dumps con datos NO.
+respaldos/
+backups/
+*.dump
+
+# ---------- Otros IDE (por si alguien abre el proyecto con otro) ----------
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+.metadata/
+# VS Code
+.vscode/
+
+# ---------- Sistema operativo ----------
+# Windows
+Thumbs.db
+ehthumbs.db
+desktop.ini
+$RECYCLE.BIN/
+# macOS
+.DS_Store
+# Linux
+*~
+
+# ---------- Temporales ----------
+*.tmp
+*.bak
+*.swp
+logs/
